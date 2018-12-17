@@ -1,5 +1,7 @@
 # Proyecto servidor dockerizado con tests en Node.js Base
 
+> Puedes ver el cómo se hizo en `documents/build.md`
+
 ### Tecnologías
 
 * [nmarkdown-it] - Lenguaje de marcado para documentar.
