@@ -367,7 +367,7 @@ Podemos ver todo lo que está preparado para el commit meidante:
 $ git status
 ```
 
-Si te has equivocado al añadir puedes quitar de la lista de preparados mediante.
+Si te has equivocado al añadir puedes quitar de la lista de preparados mediante, luego habra que volver a añadirlos mediante `git add index.js` o el nombre que sea, el punto es para que lo añada todo.
 
 ```
 $ git rm --cached index.js
@@ -378,17 +378,20 @@ Si lo que quieres es quitarlos todos del estado de preparados para el commit
 $ git reset
 ```
 
-
-
 Realizar el primer commit
 ```
 $ git commit -m "primer commit"
 ```
 
 Subir al repositorio, aquí habrá que reemplazar por el repositorio de cada uno
-```
-git remote add origin https://github.com/divae/basenode.git
-
-git push -u origin master
 
 ```
+$ git remote add origin https://github.com/divae/basenode.git
+
+$ git push -u origin master
+
+```
+
+Y hasta aquí tendremos un servidor de Node.js con Express y tests dockerizado para poder construir cualquier proyecto.
+
+Puedes enviar feedback a stlmedrano@gmail.com.
