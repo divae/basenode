@@ -4,9 +4,10 @@
 
 ### Tecnologías
 
-* [nmarkdown-it] - Lenguaje de marcado para documentar.
+* [Markdown] - Lenguaje de marcado para documentar.
 * [Node.js ](https://nodejs.org/es/) | v 11.3.0 Entorno de ejecución para javascript, 
 * [Mocha](https://www.npmjs.com/package/mocha) | v 6.4.1 Framework de test para node
+* [Chai](https://www.npmjs.com/package/chai) | V 4.2.0 Librería de aserciones
 * [Express](https://www.npmjs.com/package/express) | v 6.4.1 framework para cosntruir apps node.js  [@tjholowaychuk]
 * [Docker](https://www.docker.com/) | v 11.3.0 automatiza el despliegue de aplicaciones dentro de contenedores de software
 

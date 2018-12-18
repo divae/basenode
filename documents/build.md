@@ -170,9 +170,8 @@ aqui si valos a `package.json` veremos que se han añadido las dos dependencias 
 ##### `pacage.json`
 ```javascript
   "devDependencies": {
-    "mocha": "^5.2.0",
-    "supertest": "^3.3.0"
-
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0"
   }
 ```
 En este punto mocha necesita que le pase la app a los test, así que separo la lógica y realizo un export para poder usar esa funcionalidad.
