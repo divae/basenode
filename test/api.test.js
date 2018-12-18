@@ -1,15 +1,30 @@
-const request = require('supertest');
+let chai = require('chai');
+let chaiHttp = require('chai-http');
+const expect = require('chai').expect;
+
 const app = require('../src/app');
 
-const req = request(app);
+chai.use(chaiHttp);
 
-describe('Integration test example', function() {
-    it('get /', function(done) {
-        req
+describe('Integration test example', function () {
+    it('get /', (done) => {
+        chai.request(app)
             .get('/')
-            .set('Accept', 'application/json')
-            .expect('Content-Type', /json/)
-            .expect(JSON.stringify({ "hi": "there" }))
-            .expect(200, done);
+            .end(function (err, res) {
+                expect(res).to.have.status(200);
+                done();
+            });
+    });
+    it('get salute', (done) => {
+        chai.request(app)
+            .get('/')
+            .end(function (err, res) {
+
+                expect(res.body).to.have.property('hi').to.be.equal('there');
+
+                expect(res).to.have.status(200);
+
+                done();
+            });
     });
 });

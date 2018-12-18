@@ -153,7 +153,7 @@ $ node index.js
 ```
 
 
-## NPM MOCHA y SUPERTEST
+## NPM MOCHA , CHAI Y CHAI-HTTP 
 
 #### Iniciar NPM Mocha para tests
 Puede visitar : [NPM mocha](https://www.npmjs.com/package/mocha)
@@ -163,7 +163,8 @@ Puede visitar : [NPM mocha](https://www.npmjs.com/package/mocha)
 
 ```sh
 $ npm install mocha --save-dev
-$ npm install supertest --save-dev
+$ npm install chai --save-dev
+$ npm install chai-http --save-dev
 ```
 aqui si valos a `package.json` veremos que se han añadido las dos dependencias en el apartado `devDependencies` que es el pensado para el desarrollo.
 
@@ -171,6 +172,7 @@ aqui si valos a `package.json` veremos que se han añadido las dos dependencias 
 ```javascript
   "devDependencies": {
     "chai": "^4.2.0",
+    "chai-http": "^4.2.0",
     "mocha": "^5.2.0"
   }
 ```
@@ -229,19 +231,34 @@ El siguiente test comprobará que `/` responde y que tiene una salida de `{ "hi"
 
 ##### `api.test.js`
 ```javascript
-const request = require('supertest');
+let chai = require('chai');
+let chaiHttp = require('chai-http');
+const expect = require('chai').expect;
+
 const app = require('../src/app');
 
-const req = request(app);
+chai.use(chaiHttp);
 
-describe('Integration test example', function() {
-    it('get /', function(done) {
-        req
+describe('Integration test example', function () {
+    it('get /', (done) => {
+        chai.request(app)
             .get('/')
-            .set('Accept', 'application/json')
-            .expect('Content-Type', /json/)
-            .expect(JSON.stringify({ "hi": "world" }))
-            .expect(200, done);
+            .end(function (err, res) {
+                expect(res).to.have.status(200);
+                done();
+            });
+    });
+    it('get salute', (done) => {
+        chai.request(app)
+            .get('/')
+            .end(function (err, res) {
+
+                expect(res.body).to.have.property('hi').to.be.equal('there');
+
+                expect(res).to.have.status(200);
+
+                done();
+            });
     });
 });
 ```
