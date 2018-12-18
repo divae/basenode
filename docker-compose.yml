@@ -1,0 +1,13 @@
+version: “3”
+services:
+ example:
+   build: .
+   volumes:
+     - type: bind
+       source: ./src
+       target: /app/src
+     - type: bind
+       source: ./test
+       target: /app/test
+   ports:
+     - 5000:5000

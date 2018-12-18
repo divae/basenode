@@ -10,7 +10,7 @@
 * [Chai](https://www.npmjs.com/package/chai) | V 4.2.0 Librería de aserciones
 * [Chai-http](https://www.npmjs.com/package/chai-http) | V 6.4.1 Librería de aserciones para http
 * [Express](https://www.npmjs.com/package/express) | v 6.4.1 framework para cosntruir apps node.js  [@tjholowaychuk]
-* [Docker](https://www.docker.com/) | v 11.3.0 automatiza el despliegue de aplicaciones dentro de contenedores de software
+* [Docker](https://www.docker.com/) | v 18.6.0 automatiza el despliegue de aplicaciones dentro de contenedores de software
 
 ### Instalación
 Se requiere [Docker](https://www.docker.com/) 18+ para funcionar.
@@ -22,18 +22,22 @@ Para entornos de desarrollo...
 $ cd baseserver
 $ npm install -d
 ```
-##### Generar el contenedor
+##### Generar el contenedor y arrancar 
 La primera vez y cada vez que se realize un cambio hay que reconstruir el contenedor, el sudo dependerá de la configuración del ordenador.
-
+> El sudo depende de las necesidades de la maquina
 ```sh
-$ sudo docker build -t exampleserver .
+$ sudo docker-compose up
 ```
-##### Arrancar la aplicación
+##### Lanzar los test
+> El sudo depende de las necesidades de la maquina
 ```sh
-$ sudo docker run -it -p 5000:5000  exampleserver
+$ sudo docker-compose exec example npm test
 ```
 
 Visualización en local http://localhost:5000/
+
+##### Arrancar los test con la aplicación levantada
+docker exec id npm test
 
 ##### Iniciar sin Docker
 ```sh
