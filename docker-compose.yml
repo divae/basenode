@@ -1,13 +1,10 @@
-version: “3”
+version: "3.2"
 services:
- example:
-   build: .
-   volumes:
-     - type: bind
-       source: ./src
-       target: /app/src
-     - type: bind
-       source: ./test
-       target: /app/test
-   ports:
-     - 5000:5000
+  proyecto:
+    build: .
+    volumes:
+      - type: bind
+        source: ./src
+        target: /app/src
+    ports:
+    - 5000:5000
