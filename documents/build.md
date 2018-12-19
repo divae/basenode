@@ -23,7 +23,7 @@ $ npm install --save express
 
 podemos confirmar que se ha instalado viendo que el archivo `package.json` que se ha añadido la dependencia de express en el apartado `dependencies`, este es el archivo que se revisa para añadir las dependencias al proyecto mediante `npm init`
 
-##### `pacage.json`
+##### `package.json`
 ```javascript
  "dependencies": {
     "express": "^4.16.4"
@@ -168,7 +168,7 @@ $ npm install chai-http --save-dev
 ```
 aqui si valos a `package.json` veremos que se han añadido las dos dependencias en el apartado `devDependencies` que es el pensado para el desarrollo.
 
-##### `pacage.json`
+##### `packcage.json`
 ```javascript
   "devDependencies": {
     "chai": "^4.2.0",
