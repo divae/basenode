@@ -11,7 +11,7 @@
 * [Chai-http](https://www.npmjs.com/package/chai-http) | V 6.4.1 Librería de aserciones para http
 * [Express](https://www.npmjs.com/package/express) | v 6.4.1 framework para cosntruir apps node.js  [@tjholowaychuk]
 * [Docker](https://www.docker.com/) | v 18.6.0 automatiza el despliegue de aplicaciones dentro de contenedores de software
-* [Docker-compose](https://docs.docker.com/compose/https://www.docker.com/) | v 18.6.0 Compose es una herramienta para definir y ejecutar aplicaciones Docker de múltiples contenedores
+* [Docker-compose](https://docs.docker.com/compose/https://www.docker.com/) | v 1.17.1 Compose es una herramienta para definir y ejecutar aplicaciones Docker de múltiples contenedores
 * 
 ### Instalación
 Se requiere [Docker](https://www.docker.com/) 18+ para funcionar.

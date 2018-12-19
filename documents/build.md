@@ -352,6 +352,36 @@ $ sudo docker run -it -p 5000:5000  exampleserver
 
 > Si no funciona el servidor, revisar que se hayan dado todos los pasos y que el código es igual.
 
+## Docker-componse
+
+En este paso para poder levantar el servidor y los test a la vez necesitamos un gestor de contenedores, ésta es la parte que manejará Docker-compose.
+
+Generar en raiz el documento para contener el código del compose.
+
+```sh
+$ touch docker-compose.yml
+```
+##### `Dockerfile`
+
+>Reemplazar el contenido del fichero por el siguiente código,.
+
+```
+version: "3.2"
+services:
+  example:
+    build: .
+    volumes:
+      - type: bind
+        source: ./src
+        target: /app/src
+      - type: bind
+        source: ./test
+        target: /app/test
+    ports:
+    - 5000:5000
+```
+
+
 ## Git
 > Lo mejor es iniciar git con el arranque del proyecto, pero lo he dejado para el final para restar complegidad ya que éste no es un tutorial de git.
 
